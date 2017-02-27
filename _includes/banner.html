@@ -1,0 +1,51 @@
+
+{% if page.class == 'home' %}
+<div id="banner" style="background-image: url(/img/bg/banner-home.jpg);" class="row home align-center">
+
+  <div class="banner-inner">
+    <div class="v-align-inner">
+
+      <a class="brand" href="/"><img src="/img/logo/logo.png" /></a>
+      <p class="lead">{{ site.description }}</p>
+
+    </div>
+  </div>
+
+</div>
+{% else %}
+<div id="banner" style="background-image: url(/img/posts/{{ page.class }}/banner.jpg);" class="row fs align-center dark">
+
+  <div class="banner-inner">
+    <div class="v-align-inner">
+
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.excerpt }}</p>
+
+    </div>
+  </div>
+  <div class="overlay"></div>
+
+</div>
+
+<div class="container" id="post-meta" style="background-image: url(/img/bg/postmeta-{{ page.country | slugify }}.jpg);">
+	<div class="inner dark">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h5>
+          <strong>
+
+            <span><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{ page.date|date:"%b %d, %Y"}}</time></span><br/>
+            <span class="category"><i class="icon-tag"></i> {{ page.categories | category_links }}</span><br/>
+            <span class="author"><i class="icon-user"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
+
+  				</strong>
+        </h5>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endif %}

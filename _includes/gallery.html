@@ -1,0 +1,20 @@
+
+{% assign rows = page.galleries[include.gallery] %}
+
+{% for row in rows %}
+  <div class="row gallery">
+    <div class="mosaic">
+      {% for img in row %}
+        <img
+          src="/img/posts/{{ page.class }}/{{ img.url }}"
+          alt="{{ img.alt }}"
+          {% if img.class == 'wide' %}
+            class="gallery__item wide" width="100%"
+          {% else %}
+            class="gallery__item"
+            width="{{ img.width }}" height="{{ img.height }}"
+          {% endif %} />
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}

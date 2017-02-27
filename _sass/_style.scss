@@ -2,56 +2,135 @@
 @import
   'core',
   'typography',
-  'navigation',
-  'modal'
+  'navigation'
 ;
 
-// WEBSITE THEMING
 
-body {
-  background-color: $se-light-grey;
-  background-repeat: no-repeat;
+body {}
+
+.content {
+  padding: 40px 15px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.v-align { display: table; height: 100%; }
+.v-align-inner { display: table-cell; height: 100%; float: none; vertical-align: middle; }
+
+/* ==============================================================
+ *		Quick Styles
+ ================================================================ */
+
+
+/* HORIZONTAL RULE */
+hr { border-top: 2px solid rgba(145,164,181,0.25); height: 0; width:100%; margin: 20px 0; display: inline-block; clear: both; }
+.dark hr { border-top: 2px solid rgba(255,255,255,0.25); }
+.center hr { width: 80px; margin-left: auto; margin-right: auto; }
+
+hr.left { width: 60px; }
+hr.thin { border-width: 1px; margin: 0; }
+
+
+/* TYPE STYLING */
+.np {padding:0 !important;}
+.nm {margin:0 !important;}
+.floatR, .fr { float:right; }
+.floatL, .fl { float:left; }
+.mcenter { margin-left: auto;margin-right: auto; float: none; }
+.center { text-align: center; }
+.caps { text-transform: uppercase; }
+
+.align-center { text-align: center; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+
+
+
+.overlay { width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 0; }
+
+/* ==============================================================
+ *		Banner
+ ================================================================ */
+
+#banner {
+	padding: 60px 0 120px; position: relative; background-color: #271238; pointer-events: none;
+	background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+#banner .banner-inner { height: 100%; width: 100%; display: table; padding: 30px; z-index: 10; position: relative; }
+
+#banner .overlay { background-color: #000; opacity: 0.25; filter: alpha(opacity="25"); }
+
+#banner .brand { margin-top: 20px; margin-bottom: 40px; display: block; }
+#banner .brand img { width: 100%; }
+
+
+#banner.home { padding: 60px 0; }
+
+@media (min-width: 768px){
+
+	#banner .brand img { width: 300px; }
+
+}
+@media (min-width: 992px){}
+@media (min-width: 1200px){}
+
+
+
+/* ==============================================================
+ *		Box Styles
+ ================================================================ */
+
+.box-content,
+.box-content .title,
+.box.work .overlay {
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms; }
+
+
+
+.box {
+  width: 100%; height: 200px;
+	padding: 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  display: table;
+	background-size: cover; background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../img/bg/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-}
+  box-shadow: 0 0 0 1px rgba(145,164,181,0.25); }
 
-// ---------- Section styles ----------
+.box.height2 { height: 400px }
 
-.invert-text { color: $white; }
-.bg {
-  &--white      { background-color: $white; }
-  &--black      { background-color: $black; }
-  &--light-grey { background-color: $light-grey; }
-  &--dark-grey  { background-color: $dark-grey; }
-  &--text-black     { background-color: $text-black; }
-  &--text-heading   { background-color: $text-heading; }
-  &--text-paragraph { background-color: $text-paragraph; }
-  &--se-orange     { background-color: $se-orange; }
-  &--se-light-grey { background-color: $se-light-grey; }
-  &--se-dark-grey  { background-color: $se-dark-grey; }
-  &--partner-primary   { background-color: $partner-primary; }
-  &--partner-secondary { background-color: $partner-secondary; }
-}
+	.box .box-inner { padding: 5px 30px; display: table-cell; vertical-align: middle; }
 
 
-// ---------- button ----------
+	.box .box-content {
+		position: absolute; z-index: 1; bottom: 30px; left: 30px; right: 30px; padding: 0 15px; height: 0; overflow: hidden;
+		background-color: #fff; color: #1F292D; display: table-cell; vertical-align: middle; box-shadow: 0 0 0 0 rgba(0,0,0,0.1); }
 
-.btn {
-  @include transition;
-  display:inline-block;
-  padding: .5em 1.5em;
-  border: 1px solid $se-orange;
-  font-weight: 500;
-  border-radius: 10em;
-  &:hover {
-    color: white;
-    background-color: $se-orange;
-    text-decoration: none;
+		.box .box-content h4, .box .box-content h5, .box .box-content h6, .box .box-content p, .box .box-content a { color: #1F292D; }
+		.box .box-content a:hover { color: #000; }
+		.box:hover .box-content { height: 64px; bottom: -2px; padding: 15px 15px;  box-shadow: 0 0 0 1px rgba(0,0,0,0.1); }
+		.box .box-content .title { margin-top: -45px; margin-bottom: 0; }
+		.box:hover .box-content .title { margin-top: 10px; }
+
+
+/* ==============================================================
+ *		Post Meta
+ ================================================================ */
+
+#post-meta { background-position: center; padding: 8px; height: 120px; margin-top: -60px; border: 1px solid rgba(255,255,255,0.2); text-align: center; display: table; }
+#post-meta .inner { background-color: #0f1010; height: 100%; display: table-cell; vertical-align: middle; }
+
+
+
+.gallery {
+
+  &__item {
+    &.wide { display: block !important; }
   }
-  * + & { margin-top: 1em; }
-
-  &--solid { color: white; border: 0; background-color: $se-orange; }
-  &--large { font-size: 1.2em; padding: .5em 3em; }
 }

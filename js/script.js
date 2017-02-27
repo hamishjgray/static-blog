@@ -31,104 +31,65 @@
 
 
 ///////////////////////////////////////
-//        Navigation
-///////////////////////////////////////
-
-  // mobile nav toggle open & close
-  $('.js-toggle-mobile-nav').on('click', function(e) {
-    $('.mobile-nav').toggleClass('is-open').toggleClass('is-closed');
-  });
-
-  // current page nav highlight
-  var currentPage = $('body').data('current-page');
-  $('.' + currentPage + ' .site-nav__item--' + currentPage).addClass('site-nav__item--current');
-
-
-///////////////////////////////////////
 //      SVG image swap
 ///////////////////////////////////////
 
-  // finds image with class and swaps .png with .svg in img source string
-  if (Modernizr.svgasimg) {
-    var svgSwap = $('img.js-svg-swap');
-    svgSwap.each( function() {
-      var currentSrc = $(this).attr('src'),
-          newSrc = currentSrc.replace('.png', '.svg');
-      $(this).attr('src', newSrc);
-    });
-  }
+// finds image with class and swaps .png with .svg in img source string
+if (Modernizr.svgasimg) {
+  var svgSwap = $('img.js-svg-swap');
+  svgSwap.each( function() {
+    var currentSrc = $(this).attr('src'),
+        newSrc = currentSrc.replace('.png', '.svg');
+    $(this).attr('src', newSrc);
+  });
+}
 
-
-///////////////////////////////////////
-//      Parallax
-//      [ example: <div class="parallax" data-parallax-speed="0.2"> ]
-///////////////////////////////////////
-
-  // $(document).scroll(function(){
-  //   var scrolled = $(document).scrollTop();
-  //   $('.parallax').each(function(){
-  //     var speed = $(this).attr('data-parallax-speed');
-  //     var offset = $(this).offset();
-  //     var parallax = -(scrolled - offset.top) * speed ;
-  //     $(this).css('background-position', 'center ' + parallax + 'px');
-  //   });
-  // });
 
 
 ///////////////////////////////////////
-//    Generic modal
+//      Banner
 ///////////////////////////////////////
 
-  var modal          = $('.js-modal'),
-      modalLaunchBtn = $('.js-open-modal'),
-      modalCloseBtn  = $('.js-close-modal');
+function fullscreen(){
+	var wh = $(window).height();
+	if(wh > 700){
+		$('body').find('.fs').css('height', wh + "px");
+	}else{
+		$('body').find('.fs').css('height', "700px");
+	}
+}
 
-    // opens modal
-    function modalOpen(event){
-      event.preventDefault();
-      // disable scrolling on background content (doesn't work iOS)
-      $('body').addClass('disable-scroll');
-      // // open modal
-      modal.fadeIn('250', function(){
-        $(this).removeClass('is-closed').addClass('is-open');
-      });
-    }
+$(document).ready(function() { fullscreen(); });
+$(window).resize(function() { fullscreen(); });
 
-    // closes modal
-    function modalClose(event){
-      event.preventDefault();
-      // enable scrolling
-      $('body').removeClass('disable-scroll');
-      // close modal with fade
-      modal.fadeOut('250', function(){
-        $(this).removeClass('is-open').addClass('is-closed');
-      });
-    }
 
-    // launches modal when offer is clicked
-    modalLaunchBtn.on('click', function(event) {
-      modalOpen(event);
-    });
 
-    // closes modal on close icon click
-    modalCloseBtn.on('click', function(event) {
-      modalClose(event);
-    });
+$(document).scroll(function(){
 
-    // closes modal on background click
-    modal.on('click', function(event) {
-      if (event.target !== this){
-        return;
-      }
-      modalClose(event);
-    });
+	var st=($(document).scrollTop()/4);
+	var opac=1-($(document).scrollTop()/600);
 
-    // closes modal on escape key press
-    $(document).keyup(function(event) {
-       if (event.keyCode == 27) {
-         modalClose(event);
-        }
-    });
+	$('#banner .banner-inner').css({
+		"margin-top":st,
+		"margin-bottom":-st,
+		"opacity":opac
+	});
+
+});
+
+
+
+///////////////////////////////////////
+//      Gallery
+///////////////////////////////////////
+
+// $(document).ready(function(){
+//   var gallery = $('.gallery');
+//   var images = gallery.find('.gallery__item');
+//   images.each(function(){
+//     $(this).height(imgHeight);
+//   });
+// });
 
 
 ///////////////////////////////////////////////////////////////////////////////
