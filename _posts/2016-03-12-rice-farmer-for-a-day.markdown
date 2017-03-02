@@ -1,12 +1,30 @@
 ---
 layout: post
 title: Rice Farmer for a Day
-category: Travel
+subtitle:
 
-excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
+class: rice-farmer-for-a-day
+category: Travel
+country: Laos
+city: Luang Prabang
+
+
+galleries:
+  1:
+    -
+      - { url: '1.jpg', alt: '', width: '400', height: '225' }
+      - { url: '2.jpg', alt: '', width: '400', height: '225' }
+      - { url: '3.jpg', alt: '', width: '400', height: '225' }
+      - { url: '4.jpg', alt: '', width: '400', height: '225' }
+    -
+      - { url: '5.jpg', alt: '', width: '400', height: '225' }
+    -
+      - { url: '6.jpg', alt: '', width: '400', height: '225' }
+      - { url: '7.jpg', alt: '', width: '400', height: '225' }
+      - { url: '8.jpg', alt: '', width: '400', height: '225' }
+      - { url: '9.jpg', alt: '', width: '400', height: '225' }
 
 ---
 
-The famous temple, Wat Rong Khun of Chiang Mai, better known simply as the White Temple is a sight to behold. After an over abundance of gold and red temples in Bangkok and Chiang Mai, the pristine white and mirror mosaic temple is a welcome change!
 
-The temple was, and is, being financed by one of Thailand's richest businessmen. It's said that he's spent upwards of 60 million NZD so far (1.5 billion Baht if you're wondering!).
+{% include gallery.html  gallery=1 %}

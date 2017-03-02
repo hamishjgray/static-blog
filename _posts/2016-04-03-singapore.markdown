@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Singapore
+class: singapore
+
 category: Travel
+country: Singapore
 
 excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
 

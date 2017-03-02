@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Vientiane for a Day
+class: vientiane-for-a-day
+
 category: Travel
+country: Laos
 
 excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
 

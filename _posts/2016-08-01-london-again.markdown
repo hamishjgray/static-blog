@@ -1,7 +1,10 @@
 ---
 layout: post
 title: London Again
+class: london-again
+
 category: Travel
+country: Britain
 
 excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
 

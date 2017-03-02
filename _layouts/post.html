@@ -2,10 +2,20 @@
 layout: default
 ---
 
+
+
 <article>
-
   <div class="entry">{{ content }}</div>
-
-  <footer><!-- additional info --></footer>
 </article>
 
+
+
+<script>
+$('.mosaic').Mosaic({
+  refitOnResize: true,
+  innerGap: 15,
+  outerMargin: 15,
+  maxRowHeight: 600,
+  maxRowHeightPolicy: 'crop'
+});
+</script>

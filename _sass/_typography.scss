@@ -115,22 +115,31 @@ body a:link { -webkit-tap-highlight-color: #3EBAEB }
 @media (min-width: 1200px){}
 
 
+
 /* ==============================================================
  *		Font Styles
  ================================================================ */
 
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+  + * { margin-top: 15px; }
+}
 
 
 h1,.h1 { font-family: "Sentinel Semibold", Georgia,Times,"Times New Roman",serif; }
-h2,.h2 { font-family: "Sentinel Book Italic", Georgia,Times,"Times New Roman",serif; }
+h2,.h2 { font-family: "Sentinel Semibold", Georgia,Times,"Times New Roman",serif; }
 h3,.h3 { font-family: "Sentinel Semibold", Georgia,Times,"Times New Roman",serif; }
-h4,.h4, h5,.h5, h6,.h6 { font-family: "Maisonneue Bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+h4,.h4, h5,.h5, h6,.h6 { font-family: "Sentinel Semibold", Georgia,Times,"Times New Roman",serif; }
 
-h1,.h1 { font-size: 4.4em; margin: 15px 0; }
-h2,.h2 { font-size: 2.8em; margin: 30px 0; }
-h3,.h3 { font-size: 2.2em; margin: 20px 0; line-height: 1; }
-h4,.h4 { font-size: 1.4em; margin: 20px 0; }
-h5,.h5 { font-size: 1.2em; margin: 20px 0; line-height: 1.3; }
+h1,.h1 { font-size: 4.4em; }
+h2,.h2 { font-size: 2.2em; padding-bottom: 10px; border-bottom: 1px solid $black-15; }
+h3,.h3 { font-size: 1.8em; line-height: 1; }
+h4,.h4 { font-size: 1.4em; line-height: 1.3; }
+h5,.h5 { font-size: 1.2em; line-height: 1.3; letter-spacing: 0.05em; }
 h6,.h6 { line-height: 1.6; }
 
 

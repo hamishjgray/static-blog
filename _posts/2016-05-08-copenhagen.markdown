@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Copenhagen
+class: copenhagen
+
 category: Travel
+country: Denmark
 
 excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
 

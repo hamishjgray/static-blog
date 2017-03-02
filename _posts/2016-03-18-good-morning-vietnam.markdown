@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Good Morning Vietnam!
+class: good-morning-vietnam
+
 category: Travel
+country: Vietnam
 
 excerpt: World famous in New Zealand, Napier holds the title for Art Deco capital.
 
