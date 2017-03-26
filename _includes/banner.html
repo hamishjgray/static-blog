@@ -39,13 +39,9 @@
 <div class="container dark post-meta" style="background-image: url(/img/bg/postmeta-{{ page.country | slugify }}.jpg);">
 	<div class="row post-meta__inner">
 		<div class="col-md-12">
-			<h5>
-        <strong>
-          <span class="location">{% if page.city %}{{ page.city }}, {% endif %}{{ page.country }}</span><br/>
-          <span class="date">{{ page.date|date:"%b %d, %Y"}}</span><br/>
-          <span class="category">{{ page.categories | category_links }}</span><br/>
-          <span class="author">{% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
-				</strong>
+			<h5 class="title">
+        {% if page.city %}{{ page.city }}, {% endif %}{{ page.country }}<br>
+        {{ page.date|date:"%b %d, %Y"}}
       </h5>
 		</div>
 	</div>

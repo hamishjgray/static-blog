@@ -84,10 +84,20 @@ $(document).scroll(function(){
 ///////////////////////////////////////
 
 // $(document).ready(function(){
-//   var gallery = $('.gallery');
-//   var images = gallery.find('.gallery__item');
-//   images.each(function(){
-//     $(this).height(imgHeight);
+//   var rows = $('.gallery__row');
+//   $('.gallery__row').each(function(){
+//     var row_width = $(this).width();
+// 
+//     $(this).find('.gallery__item').each(function(){
+//       var image_width = $(this).width();
+//       var percentage = (( image_width / row_width ) * 100 )-1 ;
+//       $(this).css('width', percentage + '%');
+//       $(this).addClass('gallery__item--resized');
+//       $(this).after('<div class="gallery__item--spacer"></div>');
+//     });
+//
+//     $(this).css('width', '100%');
+//
 //   });
 // });
 

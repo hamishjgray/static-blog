@@ -1,20 +1,25 @@
 
 {% assign rows = page.galleries[include.gallery] %}
 
-{% for row in rows %}
-  <div class="row gallery">
+<div class="row gallery">
+  {% for row in rows %}
     <div class="mosaic">
       {% for img in row %}
-        <img
-          src="/img/posts/{{ page.class }}/{{ img.url }}"
-          alt="{{ img.alt }}"
-          {% if img.class == 'wide' %}
-            class="gallery__item wide" width="100%"
-          {% else %}
-            class="gallery__item"
-            width="{{ img.width }}" height="auto"
-          {% endif %} />
+        <img src="/img/posts/{{ page.class }}/{{ img.url }}" alt="{{ img.alt }}"/>
       {% endfor %}
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>
+
+<script>
+$('.mosaic').Mosaic({
+  maxRowHeight: 480,
+  refitOnResize: true,
+  refitOnResizeDelay: false,
+  defaultAspectRatio: 0.5,
+  maxRowHeightPolicy: 'crop',
+  highResImagesWidthThreshold: 850,
+  outerMargin: 15,
+  innerGap: 30
+});
+</script>
